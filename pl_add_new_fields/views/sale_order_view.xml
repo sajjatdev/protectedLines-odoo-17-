@@ -1,0 +1,18 @@
+<!-- my_custom_sale_order/views/sale_order_view.xml -->
+
+<odoo>
+    <data>
+        <!-- Inherit the sale order form view -->
+        <record id="view_order_form_inherit_hide_expiration" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit.hide.expiration</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <!-- Locate the Expiration field and set it to invisible -->
+                <xpath expr="//field[@name='validity_date']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
